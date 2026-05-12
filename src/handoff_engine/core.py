@@ -135,7 +135,7 @@ def build_handoff(inputs: HandoffInputs, generated_at: str | None = None) -> dic
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_at": timestamp,
-        "release_class": "U27-S06",
+        "system_class": "U27-S04",
         "objective": objective,
         "context": load_context_summary(inputs.context_path),
         "scope": {
@@ -172,7 +172,7 @@ def render_packet(handoff: dict[str, Any]) -> str:
 `ACCESS_STATUS: CLEARED_FOR_EXTERNAL_USE`
 
 Generated: {handoff['generated_at']}
-Release Class: {handoff['release_class']}
+System Class: {handoff['system_class']}
 
 ## Objective
 

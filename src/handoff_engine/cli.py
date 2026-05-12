@@ -72,7 +72,7 @@ def command_inspect(args: argparse.Namespace) -> int:
         return 2
 
     print(f"Objective: {handoff.get('objective', 'unknown')}")
-    print(f"Release Class: {handoff.get('release_class', 'unknown')}")
+    print(f"System Class: {handoff.get('system_class', 'unknown')}")
     print(f"Proof Cases: {len(handoff.get('proof_cases', []))}")
     print(f"Launch Gate: {handoff.get('launch_gate', {}).get('tool', 'unknown')}")
     return 0

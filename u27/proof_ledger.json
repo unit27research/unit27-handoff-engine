@@ -52,6 +52,18 @@
       "note": "",
       "recorded_at": "2026-05-12T02:01:30+00:00",
       "status": "pass"
+    },
+    {
+      "case_id": "tests-pass",
+      "claim": "The project test suite passes in the current local checkout.",
+      "command": "/usr/bin/env PYTHONPATH=src python3 -m unittest discover -s tests",
+      "evidence": [
+        "u27/evidence/run-0005.txt"
+      ],
+      "id": "run-0005",
+      "note": "",
+      "recorded_at": "2026-05-12T11:40:50+00:00",
+      "status": "pass"
     }
   ],
   "schema_version": "0.1"

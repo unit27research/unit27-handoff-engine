@@ -1,11 +1,11 @@
-# U27-S06 // Handoff Engine
+# U27-S04 // Handoff Engine
 
 [![CI](https://github.com/unit27research/unit27-handoff-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/unit27research/unit27-handoff-engine/actions/workflows/ci.yml)
 
 Handoff Engine converts objectives and context summaries into agent-ready work packets.
 
 ```text
-U27-S06
+U27-S04
 HANDOFF ENGINE
 
 CLASS: SYSTEM

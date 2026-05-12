@@ -1,6 +1,6 @@
 # Handoff Engine Design Notes
 
-`U27-S06 // HANDOFF ENGINE`
+`U27-S04 // HANDOFF ENGINE`
 
 Handoff Engine exists to convert prepared context and a known objective into a bounded agent work packet.
 

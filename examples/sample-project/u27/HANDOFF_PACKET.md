@@ -4,7 +4,7 @@
 `ACCESS_STATUS: CLEARED_FOR_EXTERNAL_USE`
 
 Generated: 2026-01-01T00:00:00+00:00
-Release Class: U27-S06
+System Class: U27-S04
 
 ## Objective
 

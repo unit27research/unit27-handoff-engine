@@ -40,7 +40,6 @@
       ]
     }
   ],
-  "release_class": "U27-S06",
   "schema_version": "0.1",
   "scope": {
     "allowed_files": [
@@ -50,5 +49,6 @@
     "blocked_files": [
       ".github/workflows/ci.yml"
     ]
-  }
+  },
+  "system_class": "U27-S04"
 }

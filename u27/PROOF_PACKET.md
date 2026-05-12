@@ -1,14 +1,14 @@
 # Proof Packet
 
 Project: unit27-handoff-engine
-Generated: 2026-05-12T02:01:35+00:00
+Generated: 2026-05-12T11:40:57+00:00
 
 ## Verified Claims
 
 - The project test suite passes in the current local checkout.
   - Case: `tests-pass`
   - Command: `/usr/bin/env PYTHONPATH=src python3 -m unittest discover -s tests`
-  - Evidence: `u27/evidence/run-0004.txt`
+  - Evidence: `u27/evidence/run-0005.txt`
 
 - The primary CLI or demo command runs successfully.
   - Case: `cli-smoke-test`

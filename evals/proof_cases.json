@@ -1,10 +1,26 @@
 [
   {
+    "claim": "Context Engine produced a context report and manifest for the handoff target.",
+    "expected": "The context scan command exits 0 and writes inspectable context artifacts.",
+    "id": "context-engine-scan",
+    "limits": [
+      "This claim covers the recorded handoff objective only."
+    ]
+  },
+  {
+    "claim": "Handoff Engine produced a handoff packet from the recorded objective and context.",
+    "expected": "The handoff build command exits 0 and writes handoff JSON plus a Markdown packet.",
+    "id": "handoff-packet-build",
+    "limits": [
+      "This claim covers the recorded handoff objective only."
+    ]
+  },
+  {
     "claim": "The project test suite passes in the current local checkout.",
     "expected": "The configured test command exits 0 and stores stdout/stderr as evidence.",
     "id": "tests-pass",
     "limits": [
-      "This claim covers the recorded local test command only."
+      "This claim covers the recorded handoff objective only."
     ]
   },
   {
@@ -12,7 +28,7 @@
     "expected": "The smoke command exits 0 and produces inspectable output.",
     "id": "cli-smoke-test",
     "limits": [
-      "This smoke test does not prove every CLI option or integration path."
+      "This claim covers the recorded handoff objective only."
     ]
   },
   {
@@ -20,7 +36,23 @@
     "expected": "The build command exits 0 and stores build output as evidence.",
     "id": "package-builds",
     "limits": [
-      "This claim covers local artifact creation, not distribution or release state."
+      "This claim covers the recorded handoff objective only."
+    ]
+  },
+  {
+    "claim": "Boundary Engine reports no unsupported public claims for the README.",
+    "expected": "The boundary scan exits 0 and writes a boundary register.",
+    "id": "boundary-readme-scan",
+    "limits": [
+      "This claim covers the recorded handoff objective only."
+    ]
+  },
+  {
+    "claim": "The launch-gate role is explicitly assessed for this repository.",
+    "expected": "The assessment records whether u27-check is applicable before any launch-surface claim is made.",
+    "id": "launch-gate-assessed",
+    "limits": [
+      "This claim covers the recorded handoff objective only."
     ]
   }
 ]

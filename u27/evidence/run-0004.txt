@@ -1,11 +1,7 @@
-$ /usr/bin/env PYTHONPATH=src python3 -m unittest discover -s tests
+$ /usr/bin/env PYTHONPATH=src python3 -m handoff_engine.cli demo --root /tmp/handoff-engine-dogfood-demo
 exit_code: 0
 
 ## stdout
+Demo handoff packet written: /tmp/handoff-engine-dogfood-demo/u27/HANDOFF_PACKET.md
 
 ## stderr
-............
-----------------------------------------------------------------------
-Ran 12 tests in 0.010s
-
-OK

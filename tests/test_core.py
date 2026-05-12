@@ -26,6 +26,10 @@ class HandoffCoreTests(unittest.TestCase):
             [case["id"] for case in handoff["proof_cases"]],
             ["implementation-complete", "tests-pass", "handoff-reviewed"],
         )
+        self.assertEqual(
+            handoff["proof_cases"][1]["claim"],
+            "The project test suite passes in the current local checkout.",
+        )
 
     def test_build_handoff_loads_context_report(self):
         with tempfile.TemporaryDirectory() as tmp:

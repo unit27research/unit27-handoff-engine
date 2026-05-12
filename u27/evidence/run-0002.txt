@@ -1,7 +1,9 @@
-$ /usr/bin/env PYTHONPATH=src python3 -m handoff_engine.cli demo --root /tmp/handoff-engine-proof-demo
+$ /usr/bin/env PYTHONPATH=src python3 -m handoff_engine.cli build --objective 'Dogfood the Unit27 system order on Handoff Engine and preserve the generated context, handoff, proof, boundary, and launch-gate artifacts.' --context u27/context_report.json --allowed README.md --allowed DESIGN_NOTES.md --allowed src/handoff_engine/core.py --allowed src/handoff_engine/cli.py --allowed tests/test_core.py --allowed tests/test_cli.py --allowed u27/context_report.json --allowed u27/context_manifest.md --allowed u27/HANDOFF_PACKET.md --allowed u27/handoff.json --allowed u27/proof_ledger.json --allowed u27/PROOF_PACKET.md --allowed u27/BOUNDARY_REGISTER.md --blocked .github/workflows/ci.yml --constraint 'Keep public claims inside recorded proof.' --constraint 'Do not expand Handoff Engine into Proof Ledger, Boundary Engine, Context Engine, or launch QA.' --acceptance 'Context Engine produces u27/context_report.json and u27/context_manifest.md for this repo.' --acceptance 'Handoff Engine produces u27/handoff.json and u27/HANDOFF_PACKET.md from the context report.' --acceptance 'Proof Ledger records passing tests, CLI smoke, package build, and boundary scan evidence.' --acceptance 'Boundary Engine reports unsupported=0 for README.md.' --acceptance 'u27-check launch gate is explicitly assessed for CLI applicability.' --proof-case context-engine-scan --proof-case handoff-packet-build --proof-case tests-pass --proof-case cli-smoke-test --proof-case package-builds --proof-case boundary-readme-scan --proof-case launch-gate-assessed --boundary-note 'This dogfood packet proves the toolchain sequence for this repo only.' --boundary-note 'u27-check is a launch-surface gate; CLI-only repos may record it as not applicable rather than force a web-app check.'
 exit_code: 0
 
 ## stdout
-Demo handoff packet written: /tmp/handoff-engine-proof-demo/u27/HANDOFF_PACKET.md
+Handoff packet written: u27/HANDOFF_PACKET.md
+Handoff JSON written: u27/handoff.json
+Proof cases written: evals/proof_cases.json
 
 ## stderr

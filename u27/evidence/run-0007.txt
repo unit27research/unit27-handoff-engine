@@ -1,0 +1,7 @@
+$ python3 -c 'print('"'"'u27-check launch-gate assessment: not applicable for unit27-handoff-engine because this repository is a CLI field kit, not a web/product launch surface. No launch-pass claim is made.'"'"')'
+exit_code: 0
+
+## stdout
+u27-check launch-gate assessment: not applicable for unit27-handoff-engine because this repository is a CLI field kit, not a web/product launch surface. No launch-pass claim is made.
+
+## stderr

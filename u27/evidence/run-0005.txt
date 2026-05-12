@@ -1,11 +1,16 @@
-$ /usr/bin/env PYTHONPATH=src python3 -m unittest discover -s tests
+$ /Users/joshuabloodworth/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m pip wheel . --no-deps --no-build-isolation -w /tmp/handoff-engine-dogfood-wheel
 exit_code: 0
 
 ## stdout
+Processing ./.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: unit27-handoff-engine
+  Building wheel for unit27-handoff-engine (pyproject.toml): started
+  Building wheel for unit27-handoff-engine (pyproject.toml): finished with status 'done'
+  Created wheel for unit27-handoff-engine: filename=unit27_handoff_engine-0.1.0-py3-none-any.whl size=8915 sha256=3548ff7179aface6040a106dacb5ed989b54225eb1df0a8682f76e4943e6fa54
+  Stored in directory: /private/var/folders/cg/3wtt78v577d66ckcvzykyvjh0000gn/T/pip-ephem-wheel-cache-1fujg_l_/wheels/cd/e0/b6/dbfd0d514ce93ff2152dcea8134299a1f23c6f0927ca8c9369
+Successfully built unit27-handoff-engine
 
 ## stderr
-............
-----------------------------------------------------------------------
-Ran 12 tests in 0.010s
-
-OK
+WARNING: The directory '/Users/joshuabloodworth/Library/Caches/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.

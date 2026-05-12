@@ -10,6 +10,45 @@ from typing import Any, Iterable
 
 SCHEMA_VERSION = "0.1"
 
+PROOF_CASE_TEMPLATES = {
+    "context-engine-scan": (
+        "Context Engine produced a context report and manifest for the handoff target.",
+        "The context scan command exits 0 and writes inspectable context artifacts.",
+    ),
+    "handoff-packet-build": (
+        "Handoff Engine produced a handoff packet from the recorded objective and context.",
+        "The handoff build command exits 0 and writes handoff JSON plus a Markdown packet.",
+    ),
+    "tests-pass": (
+        "The project test suite passes in the current local checkout.",
+        "The configured test command exits 0 and stores stdout/stderr as evidence.",
+    ),
+    "cli-smoke-test": (
+        "The primary CLI or demo command runs successfully.",
+        "The smoke command exits 0 and produces inspectable output.",
+    ),
+    "package-builds": (
+        "The project can produce its expected build or package artifact.",
+        "The build command exits 0 and stores build output as evidence.",
+    ),
+    "boundary-readme-scan": (
+        "Boundary Engine reports no unsupported public claims for the README.",
+        "The boundary scan exits 0 and writes a boundary register.",
+    ),
+    "launch-gate-assessed": (
+        "The launch-gate role is explicitly assessed for this repository.",
+        "The assessment records whether u27-check is applicable before any launch-surface claim is made.",
+    ),
+    "implementation-complete": (
+        "The requested handoff objective has been implemented within the allowed scope.",
+        "Evidence exists before the work is represented as complete.",
+    ),
+    "handoff-reviewed": (
+        "The generated handoff packet has been reviewed for scope, proof, and boundary fit.",
+        "A reviewer can inspect the packet and confirm the work order is bounded.",
+    ),
+}
+
 
 @dataclass(frozen=True)
 class HandoffInputs:
@@ -88,11 +127,18 @@ def default_proof_cases(objective: str, proof_cases: Iterable[str] | None = None
     cases: list[dict[str, Any]] = []
     for case in requested:
         case_id = slugify(case)
+        claim, expected = PROOF_CASE_TEMPLATES.get(
+            case_id,
+            (
+                f"The handoff objective is satisfied: {objective}",
+                f"Evidence exists for `{case}` before the work is represented as complete.",
+            ),
+        )
         cases.append(
             {
                 "id": case_id,
-                "claim": f"The handoff objective is satisfied: {objective}",
-                "expected": f"Evidence exists for `{case}` before the work is represented as complete.",
+                "claim": claim,
+                "expected": expected,
                 "limits": ["This claim covers the recorded handoff objective only."],
             }
         )

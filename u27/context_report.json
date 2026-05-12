@@ -1,0 +1,411 @@
+{
+  "status": "PASS",
+  "total_tokens": 7901,
+  "token_budget": 50000,
+  "files_included": 15,
+  "files_skipped": 14,
+  "skip_reasons": {
+    "custom_exclude": 11,
+    "default_exclude": 2,
+    "gitignore": 1
+  },
+  "token_mode": "exact",
+  "token_warning": null,
+  "heaviest_files": [
+    {
+      "path": "src/handoff_engine/core.py",
+      "tokens": 2367,
+      "priority": "CORE",
+      "score": 490
+    },
+    {
+      "path": "README.md",
+      "tokens": 1207,
+      "priority": "CORE",
+      "score": 400
+    },
+    {
+      "path": "src/handoff_engine/cli.py",
+      "tokens": 1060,
+      "priority": "CORE",
+      "score": 460
+    },
+    {
+      "path": "tests/test_cli.py",
+      "tokens": 809,
+      "priority": "SUPPORTING",
+      "score": 240
+    },
+    {
+      "path": "tests/test_core.py",
+      "tokens": 694,
+      "priority": "SUPPORTING",
+      "score": 240
+    },
+    {
+      "path": "evals/proof_cases.json",
+      "tokens": 488,
+      "priority": "SUPPORTING",
+      "score": 180
+    },
+    {
+      "path": "DESIGN_NOTES.md",
+      "tokens": 414,
+      "priority": "SUPPORTING",
+      "score": 180
+    },
+    {
+      "path": "scripts/verify_wheel.py",
+      "tokens": 229,
+      "priority": "SUPPORTING",
+      "score": 212
+    },
+    {
+      "path": "pyproject.toml",
+      "tokens": 207,
+      "priority": "SUPPORTING",
+      "score": 230
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "tokens": 174,
+      "priority": "SUPPORTING",
+      "score": 180
+    }
+  ],
+  "cost_estimates": {
+    "gpt-4o": 0.039505,
+    "claude-3-5-sonnet": 0.023703
+  },
+  "included_files": [
+    {
+      "path": ".gitignore",
+      "extension": "",
+      "priority": "SUPPORTING",
+      "tokens": 31,
+      "content": null,
+      "source_path": null,
+      "score": 180,
+      "signals": [
+        "priority:supporting"
+      ],
+      "imports": [],
+      "inbound_imports": 0
+    },
+    {
+      "path": "DESIGN_NOTES.md",
+      "extension": ".md",
+      "priority": "SUPPORTING",
+      "tokens": 414,
+      "content": null,
+      "source_path": null,
+      "score": 180,
+      "signals": [
+        "priority:supporting"
+      ],
+      "imports": [],
+      "inbound_imports": 0
+    },
+    {
+      "path": "README.md",
+      "extension": ".md",
+      "priority": "CORE",
+      "tokens": 1207,
+      "content": null,
+      "source_path": null,
+      "score": 400,
+      "signals": [
+        "priority:core",
+        "repo_overview",
+        "recent"
+      ],
+      "imports": [],
+      "inbound_imports": 0
+    },
+    {
+      "path": "pyproject.toml",
+      "extension": ".toml",
+      "priority": "SUPPORTING",
+      "tokens": 207,
+      "content": null,
+      "source_path": null,
+      "score": 230,
+      "signals": [
+        "priority:supporting",
+        "project_contract"
+      ],
+      "imports": [],
+      "inbound_imports": 0
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "extension": ".yml",
+      "priority": "SUPPORTING",
+      "tokens": 174,
+      "content": null,
+      "source_path": null,
+      "score": 180,
+      "signals": [
+        "priority:supporting"
+      ],
+      "imports": [],
+      "inbound_imports": 0
+    },
+    {
+      "path": "evals/proof_cases.json",
+      "extension": ".json",
+      "priority": "SUPPORTING",
+      "tokens": 488,
+      "content": null,
+      "source_path": null,
+      "score": 180,
+      "signals": [
+        "priority:supporting"
+      ],
+      "imports": [],
+      "inbound_imports": 0
+    },
+    {
+      "path": "examples/sample-project/README.md",
+      "extension": ".md",
+      "priority": "SUPPORTING",
+      "tokens": 17,
+      "content": null,
+      "source_path": null,
+      "score": 270,
+      "signals": [
+        "priority:supporting",
+        "repo_overview"
+      ],
+      "imports": [],
+      "inbound_imports": 0
+    },
+    {
+      "path": "examples/sample-project/context_report.json",
+      "extension": ".json",
+      "priority": "SUPPORTING",
+      "tokens": 34,
+      "content": null,
+      "source_path": null,
+      "score": 180,
+      "signals": [
+        "priority:supporting"
+      ],
+      "imports": [],
+      "inbound_imports": 0
+    },
+    {
+      "path": "examples/sample-project/evals/proof_cases.json",
+      "extension": ".json",
+      "priority": "SUPPORTING",
+      "tokens": 152,
+      "content": null,
+      "source_path": null,
+      "score": 180,
+      "signals": [
+        "priority:supporting"
+      ],
+      "imports": [],
+      "inbound_imports": 0
+    },
+    {
+      "path": "scripts/verify_wheel.py",
+      "extension": ".py",
+      "priority": "SUPPORTING",
+      "tokens": 229,
+      "content": null,
+      "source_path": null,
+      "score": 212,
+      "signals": [
+        "priority:supporting",
+        "dependency_context"
+      ],
+      "imports": [
+        "__future__",
+        "pathlib",
+        "sys",
+        "zipfile"
+      ],
+      "inbound_imports": 0
+    },
+    {
+      "path": "src/handoff_engine/__init__.py",
+      "extension": ".py",
+      "priority": "CORE",
+      "tokens": 18,
+      "content": null,
+      "source_path": null,
+      "score": 300,
+      "signals": [
+        "priority:core"
+      ],
+      "imports": [],
+      "inbound_imports": 0
+    },
+    {
+      "path": "src/handoff_engine/cli.py",
+      "extension": ".py",
+      "priority": "CORE",
+      "tokens": 1060,
+      "content": null,
+      "source_path": null,
+      "score": 460,
+      "signals": [
+        "priority:core",
+        "entrypoint",
+        "inbound_imports:1",
+        "dependency_context"
+      ],
+      "imports": [
+        "__future__",
+        "argparse",
+        "handoff_engine.core",
+        "json",
+        "pathlib",
+        "sys"
+      ],
+      "inbound_imports": 1
+    },
+    {
+      "path": "src/handoff_engine/core.py",
+      "extension": ".py",
+      "priority": "CORE",
+      "tokens": 2367,
+      "content": null,
+      "source_path": null,
+      "score": 490,
+      "signals": [
+        "priority:core",
+        "inbound_imports:2",
+        "dependency_context"
+      ],
+      "imports": [
+        "__future__",
+        "dataclasses",
+        "datetime",
+        "json",
+        "pathlib",
+        "typing"
+      ],
+      "inbound_imports": 2
+    },
+    {
+      "path": "tests/test_cli.py",
+      "extension": ".py",
+      "priority": "SUPPORTING",
+      "tokens": 809,
+      "content": null,
+      "source_path": null,
+      "score": 240,
+      "signals": [
+        "priority:supporting",
+        "dependency_context",
+        "test_relevance"
+      ],
+      "imports": [
+        "contextlib",
+        "handoff_engine.cli",
+        "io",
+        "json",
+        "pathlib",
+        "tempfile",
+        "unittest"
+      ],
+      "inbound_imports": 0
+    },
+    {
+      "path": "tests/test_core.py",
+      "extension": ".py",
+      "priority": "SUPPORTING",
+      "tokens": 694,
+      "content": null,
+      "source_path": null,
+      "score": 240,
+      "signals": [
+        "priority:supporting",
+        "dependency_context",
+        "test_relevance"
+      ],
+      "imports": [
+        "handoff_engine.core",
+        "json",
+        "pathlib",
+        "tempfile",
+        "unittest"
+      ],
+      "inbound_imports": 0
+    }
+  ],
+  "skipped_files": [
+    {
+      "path": ".git",
+      "reason": "default_exclude",
+      "score": 0
+    },
+    {
+      "path": "build",
+      "reason": "default_exclude",
+      "score": 0
+    },
+    {
+      "path": "examples/sample-project/u27/HANDOFF_PACKET.md",
+      "reason": "custom_exclude",
+      "score": 0
+    },
+    {
+      "path": "examples/sample-project/u27/handoff.json",
+      "reason": "custom_exclude",
+      "score": 0
+    },
+    {
+      "path": "src/unit27_handoff_engine.egg-info",
+      "reason": "gitignore",
+      "score": 0
+    },
+    {
+      "path": "u27/evidence",
+      "reason": "custom_exclude",
+      "score": 0
+    },
+    {
+      "path": "u27/BOUNDARY_REGISTER.md",
+      "reason": "custom_exclude",
+      "score": 0
+    },
+    {
+      "path": "u27/HANDOFF_PACKET.md",
+      "reason": "custom_exclude",
+      "score": 0
+    },
+    {
+      "path": "u27/PROOF_PACKET.md",
+      "reason": "custom_exclude",
+      "score": 0
+    },
+    {
+      "path": "u27/boundary_report.json",
+      "reason": "custom_exclude",
+      "score": 0
+    },
+    {
+      "path": "u27/context_manifest.md",
+      "reason": "custom_exclude",
+      "score": 0
+    },
+    {
+      "path": "u27/context_report.json",
+      "reason": "custom_exclude",
+      "score": 0
+    },
+    {
+      "path": "u27/handoff.json",
+      "reason": "custom_exclude",
+      "score": 0
+    },
+    {
+      "path": "u27/proof_ledger.json",
+      "reason": "custom_exclude",
+      "score": 0
+    }
+  ]
+}

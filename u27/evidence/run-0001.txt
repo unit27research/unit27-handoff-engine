@@ -1,11 +1,44 @@
-$ /usr/bin/env PYTHONPATH=src python3 -m unittest discover -s tests
+$ /Users/joshuabloodworth/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m context_engine.cli scan . --output u27/context_manifest.md --report u27/context_report.json --max-tokens 50000 --exact-tokens --exclude 'u27/*' --exclude 'examples/sample-project/u27/*' --exclude 'build/*' --exclude '*.egg-info/*'
 exit_code: 0
 
 ## stdout
+U27-S03 // CONTEXT ENGINE
+
+ STATUS      PASS
+ TOKENS      7,901 / 50,000
+ TOKEN_MODE  EXACT
+ FILES       15 / 14
+ MANIFEST    u27/context_manifest.md
+ REPORT      u27/context_report.json
+                       Heaviest Files
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┓
+┃ Path                       ┃ Priority   ┃ Score ┃ Tokens ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━┩
+│ src/handoff_engine/core.py │ CORE       │   490 │  2,367 │
+│ README.md                  │ CORE       │   400 │  1,207 │
+│ src/handoff_engine/cli.py  │ CORE       │   460 │  1,060 │
+│ tests/test_cli.py          │ SUPPORTING │   240 │    809 │
+│ tests/test_core.py         │ SUPPORTING │   240 │    694 │
+│ evals/proof_cases.json     │ SUPPORTING │   180 │    488 │
+│ DESIGN_NOTES.md            │ SUPPORTING │   180 │    414 │
+│ scripts/verify_wheel.py    │ SUPPORTING │   212 │    229 │
+│ pyproject.toml             │ SUPPORTING │   230 │    207 │
+│ .github/workflows/ci.yml   │ SUPPORTING │   180 │    174 │
+└────────────────────────────┴────────────┴───────┴────────┘
+       Skip Reasons
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Reason          ┃ Count ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ custom_exclude  │    11 │
+│ default_exclude │     2 │
+│ gitignore       │     1 │
+└─────────────────┴───────┘
+   Static Input Cost Estimates
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┓
+┃ Model             ┃       USD ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━┩
+│ gpt-4o            │ $0.039505 │
+│ claude-3-5-sonnet │ $0.023703 │
+└───────────────────┴───────────┘
 
 ## stderr
-............
-----------------------------------------------------------------------
-Ran 12 tests in 0.010s
-
-OK

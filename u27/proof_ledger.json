@@ -6,63 +6,87 @@
   },
   "runs": [
     {
-      "case_id": "tests-pass",
-      "claim": "The project test suite passes in the current local checkout.",
-      "command": "/usr/bin/env PYTHONPATH=src python3 -m unittest discover -s tests",
+      "case_id": "context-engine-scan",
+      "claim": "Context Engine produced a context report and manifest for the handoff target.",
+      "command": "/Users/joshuabloodworth/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m context_engine.cli scan . --output u27/context_manifest.md --report u27/context_report.json --max-tokens 50000 --exact-tokens --exclude 'u27/*' --exclude 'examples/sample-project/u27/*' --exclude 'build/*' --exclude '*.egg-info/*'",
       "evidence": [
         "u27/evidence/run-0001.txt"
       ],
       "id": "run-0001",
       "note": "",
-      "recorded_at": "2026-05-12T01:58:26+00:00",
+      "recorded_at": "2026-05-12T16:53:49+00:00",
       "status": "pass"
     },
     {
-      "case_id": "cli-smoke-test",
-      "claim": "The primary CLI or demo command runs successfully.",
-      "command": "/usr/bin/env PYTHONPATH=src python3 -m handoff_engine.cli demo --root /tmp/handoff-engine-proof-demo",
+      "case_id": "handoff-packet-build",
+      "claim": "Handoff Engine produced a handoff packet from the recorded objective and context.",
+      "command": "/usr/bin/env PYTHONPATH=src python3 -m handoff_engine.cli build --objective 'Dogfood the Unit27 system order on Handoff Engine and preserve the generated context, handoff, proof, boundary, and launch-gate artifacts.' --context u27/context_report.json --allowed README.md --allowed DESIGN_NOTES.md --allowed src/handoff_engine/core.py --allowed src/handoff_engine/cli.py --allowed tests/test_core.py --allowed tests/test_cli.py --allowed u27/context_report.json --allowed u27/context_manifest.md --allowed u27/HANDOFF_PACKET.md --allowed u27/handoff.json --allowed u27/proof_ledger.json --allowed u27/PROOF_PACKET.md --allowed u27/BOUNDARY_REGISTER.md --blocked .github/workflows/ci.yml --constraint 'Keep public claims inside recorded proof.' --constraint 'Do not expand Handoff Engine into Proof Ledger, Boundary Engine, Context Engine, or launch QA.' --acceptance 'Context Engine produces u27/context_report.json and u27/context_manifest.md for this repo.' --acceptance 'Handoff Engine produces u27/handoff.json and u27/HANDOFF_PACKET.md from the context report.' --acceptance 'Proof Ledger records passing tests, CLI smoke, package build, and boundary scan evidence.' --acceptance 'Boundary Engine reports unsupported=0 for README.md.' --acceptance 'u27-check launch gate is explicitly assessed for CLI applicability.' --proof-case context-engine-scan --proof-case handoff-packet-build --proof-case tests-pass --proof-case cli-smoke-test --proof-case package-builds --proof-case boundary-readme-scan --proof-case launch-gate-assessed --boundary-note 'This dogfood packet proves the toolchain sequence for this repo only.' --boundary-note 'u27-check is a launch-surface gate; CLI-only repos may record it as not applicable rather than force a web-app check.'",
       "evidence": [
         "u27/evidence/run-0002.txt"
       ],
       "id": "run-0002",
       "note": "",
-      "recorded_at": "2026-05-12T01:58:30+00:00",
+      "recorded_at": "2026-05-12T16:54:12+00:00",
       "status": "pass"
     },
     {
-      "case_id": "package-builds",
-      "claim": "The project can produce its expected build or package artifact.",
-      "command": "/Users/joshuabloodworth/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m pip wheel . --no-deps --no-build-isolation -w /tmp/handoff-engine-proof-wheel",
+      "case_id": "tests-pass",
+      "claim": "The project test suite passes in the current local checkout.",
+      "command": "/usr/bin/env PYTHONPATH=src python3 -m unittest discover -s tests",
       "evidence": [
         "u27/evidence/run-0003.txt"
       ],
       "id": "run-0003",
       "note": "",
-      "recorded_at": "2026-05-12T01:58:35+00:00",
+      "recorded_at": "2026-05-12T16:54:19+00:00",
       "status": "pass"
     },
     {
-      "case_id": "tests-pass",
-      "claim": "The project test suite passes in the current local checkout.",
-      "command": "/usr/bin/env PYTHONPATH=src python3 -m unittest discover -s tests",
+      "case_id": "cli-smoke-test",
+      "claim": "The primary CLI or demo command runs successfully.",
+      "command": "/usr/bin/env PYTHONPATH=src python3 -m handoff_engine.cli demo --root /tmp/handoff-engine-dogfood-demo",
       "evidence": [
         "u27/evidence/run-0004.txt"
       ],
       "id": "run-0004",
       "note": "",
-      "recorded_at": "2026-05-12T02:01:30+00:00",
+      "recorded_at": "2026-05-12T16:54:29+00:00",
       "status": "pass"
     },
     {
-      "case_id": "tests-pass",
-      "claim": "The project test suite passes in the current local checkout.",
-      "command": "/usr/bin/env PYTHONPATH=src python3 -m unittest discover -s tests",
+      "case_id": "package-builds",
+      "claim": "The project can produce its expected build or package artifact.",
+      "command": "/Users/joshuabloodworth/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m pip wheel . --no-deps --no-build-isolation -w /tmp/handoff-engine-dogfood-wheel",
       "evidence": [
         "u27/evidence/run-0005.txt"
       ],
       "id": "run-0005",
       "note": "",
-      "recorded_at": "2026-05-12T11:40:50+00:00",
+      "recorded_at": "2026-05-12T16:54:44+00:00",
+      "status": "pass"
+    },
+    {
+      "case_id": "boundary-readme-scan",
+      "claim": "Boundary Engine reports no unsupported public claims for the README.",
+      "command": "/usr/bin/env PYTHONPATH=../unit27-boundary-engine/src python3 -m boundary_engine.cli scan README.md --proof u27/proof_ledger.json",
+      "evidence": [
+        "u27/evidence/run-0006.txt"
+      ],
+      "id": "run-0006",
+      "note": "",
+      "recorded_at": "2026-05-12T16:54:50+00:00",
+      "status": "pass"
+    },
+    {
+      "case_id": "launch-gate-assessed",
+      "claim": "The launch-gate role is explicitly assessed for this repository.",
+      "command": "python3 -c 'print('\"'\"'u27-check launch-gate assessment: not applicable for unit27-handoff-engine because this repository is a CLI field kit, not a web/product launch surface. No launch-pass claim is made.'\"'\"')'",
+      "evidence": [
+        "u27/evidence/run-0007.txt"
+      ],
+      "id": "run-0007",
+      "note": "",
+      "recorded_at": "2026-05-12T16:54:58+00:00",
       "status": "pass"
     }
   ],

@@ -1,0 +1,110 @@
+{
+  "acceptance_checks": [
+    "Context Engine produces u27/context_report.json and u27/context_manifest.md for this repo.",
+    "Handoff Engine produces u27/handoff.json and u27/HANDOFF_PACKET.md from the context report.",
+    "Proof Ledger records passing tests, CLI smoke, package build, and boundary scan evidence.",
+    "Boundary Engine reports unsupported=0 for README.md.",
+    "u27-check launch gate is explicitly assessed for CLI applicability."
+  ],
+  "boundary_notes": [
+    "This dogfood packet proves the toolchain sequence for this repo only.",
+    "u27-check is a launch-surface gate; CLI-only repos may record it as not applicable rather than force a web-app check."
+  ],
+  "constraints": [
+    "Keep public claims inside recorded proof.",
+    "Do not expand Handoff Engine into Proof Ledger, Boundary Engine, Context Engine, or launch QA."
+  ],
+  "context": {
+    "files_considered": null,
+    "source": "u27/context_report.json",
+    "summary": "Context report loaded.",
+    "token_count": 7901
+  },
+  "generated_at": "2026-05-12T16:54:12+00:00",
+  "launch_gate": {
+    "reason": "Run after implementation and public-surface updates, before a real user reaches the launch path.",
+    "recommended": true,
+    "tool": "u27-check"
+  },
+  "objective": "Dogfood the Unit27 system order on Handoff Engine and preserve the generated context, handoff, proof, boundary, and launch-gate artifacts.",
+  "proof_cases": [
+    {
+      "claim": "Context Engine produced a context report and manifest for the handoff target.",
+      "expected": "The context scan command exits 0 and writes inspectable context artifacts.",
+      "id": "context-engine-scan",
+      "limits": [
+        "This claim covers the recorded handoff objective only."
+      ]
+    },
+    {
+      "claim": "Handoff Engine produced a handoff packet from the recorded objective and context.",
+      "expected": "The handoff build command exits 0 and writes handoff JSON plus a Markdown packet.",
+      "id": "handoff-packet-build",
+      "limits": [
+        "This claim covers the recorded handoff objective only."
+      ]
+    },
+    {
+      "claim": "The project test suite passes in the current local checkout.",
+      "expected": "The configured test command exits 0 and stores stdout/stderr as evidence.",
+      "id": "tests-pass",
+      "limits": [
+        "This claim covers the recorded handoff objective only."
+      ]
+    },
+    {
+      "claim": "The primary CLI or demo command runs successfully.",
+      "expected": "The smoke command exits 0 and produces inspectable output.",
+      "id": "cli-smoke-test",
+      "limits": [
+        "This claim covers the recorded handoff objective only."
+      ]
+    },
+    {
+      "claim": "The project can produce its expected build or package artifact.",
+      "expected": "The build command exits 0 and stores build output as evidence.",
+      "id": "package-builds",
+      "limits": [
+        "This claim covers the recorded handoff objective only."
+      ]
+    },
+    {
+      "claim": "Boundary Engine reports no unsupported public claims for the README.",
+      "expected": "The boundary scan exits 0 and writes a boundary register.",
+      "id": "boundary-readme-scan",
+      "limits": [
+        "This claim covers the recorded handoff objective only."
+      ]
+    },
+    {
+      "claim": "The launch-gate role is explicitly assessed for this repository.",
+      "expected": "The assessment records whether u27-check is applicable before any launch-surface claim is made.",
+      "id": "launch-gate-assessed",
+      "limits": [
+        "This claim covers the recorded handoff objective only."
+      ]
+    }
+  ],
+  "schema_version": "0.1",
+  "scope": {
+    "allowed_files": [
+      "README.md",
+      "DESIGN_NOTES.md",
+      "src/handoff_engine/core.py",
+      "src/handoff_engine/cli.py",
+      "tests/test_core.py",
+      "tests/test_cli.py",
+      "u27/context_report.json",
+      "u27/context_manifest.md",
+      "u27/HANDOFF_PACKET.md",
+      "u27/handoff.json",
+      "u27/proof_ledger.json",
+      "u27/PROOF_PACKET.md",
+      "u27/BOUNDARY_REGISTER.md"
+    ],
+    "blocked_files": [
+      ".github/workflows/ci.yml"
+    ]
+  },
+  "system_class": "U27-S04"
+}

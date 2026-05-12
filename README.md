@@ -79,6 +79,20 @@ Stack Engine -> Context Engine -> Handoff Engine -> Proof Ledger -> Boundary Eng
 
 Handoff Engine sits after context preparation and before proof recording. It does not decide whether the project should exist, scan the repository, run the work, or certify the result.
 
+## Dogfood Artifacts
+
+This repository includes a Unit27 system-order dogfood pass against itself:
+
+1. `u27/context_report.json`
+2. `u27/context_manifest.md`
+3. `u27/handoff.json`
+4. `u27/HANDOFF_PACKET.md`
+5. `u27/proof_ledger.json`
+6. `u27/PROOF_PACKET.md`
+7. `u27/BOUNDARY_REGISTER.md`
+
+The launch-gate role is recorded as an applicability assessment. Handoff Engine is a CLI field kit, not a web launch surface, so no `u27-check` launch-pass claim is made.
+
 ## CLI
 
 ```bash

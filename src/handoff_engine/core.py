@@ -135,7 +135,7 @@ def build_handoff(inputs: HandoffInputs, generated_at: str | None = None) -> dic
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_at": timestamp,
-        "release_class": "U27-S04",
+        "release_class": "U27-S06",
         "objective": objective,
         "context": load_context_summary(inputs.context_path),
         "scope": {

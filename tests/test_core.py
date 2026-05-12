@@ -18,7 +18,7 @@ class HandoffCoreTests(unittest.TestCase):
         )
 
         self.assertEqual(handoff["schema_version"], "0.1")
-        self.assertEqual(handoff["release_class"], "U27-S04")
+        self.assertEqual(handoff["release_class"], "U27-S06")
         self.assertEqual(handoff["objective"], "Update README usage.")
         self.assertEqual(handoff["context"]["summary"], "No context report supplied.")
         self.assertEqual(handoff["launch_gate"]["tool"], "u27-check")

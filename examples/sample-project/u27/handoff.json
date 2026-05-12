@@ -1,0 +1,54 @@
+{
+  "acceptance_checks": [
+    "README includes a runnable command example.",
+    "Tests still pass."
+  ],
+  "boundary_notes": [
+    "Do not claim production readiness."
+  ],
+  "constraints": [
+    "Keep public claims inside recorded proof."
+  ],
+  "context": {
+    "files_considered": 4,
+    "source": "examples/sample-project/context_report.json",
+    "summary": "Demo context for a README usage update.",
+    "token_count": 1200
+  },
+  "generated_at": "2026-01-01T00:00:00+00:00",
+  "launch_gate": {
+    "reason": "Run after implementation and public-surface updates, before a real user reaches the launch path.",
+    "recommended": true,
+    "tool": "u27-check"
+  },
+  "objective": "Add a concise usage section to the README.",
+  "proof_cases": [
+    {
+      "claim": "The handoff objective is satisfied: Add a concise usage section to the README.",
+      "expected": "Evidence exists for `readme-usage-present` before the work is represented as complete.",
+      "id": "readme-usage-present",
+      "limits": [
+        "This claim covers the recorded handoff objective only."
+      ]
+    },
+    {
+      "claim": "The handoff objective is satisfied: Add a concise usage section to the README.",
+      "expected": "Evidence exists for `tests-pass` before the work is represented as complete.",
+      "id": "tests-pass",
+      "limits": [
+        "This claim covers the recorded handoff objective only."
+      ]
+    }
+  ],
+  "release_class": "U27-S04",
+  "schema_version": "0.1",
+  "scope": {
+    "allowed_files": [
+      "README.md",
+      "tests/test_cli.py"
+    ],
+    "blocked_files": [
+      ".github/workflows/ci.yml"
+    ]
+  }
+}

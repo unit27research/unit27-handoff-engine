@@ -1,0 +1,7 @@
+$ /usr/bin/env PYTHONPATH=src python3 -m handoff_engine.cli demo --root /tmp/handoff-engine-proof-demo
+exit_code: 0
+
+## stdout
+Demo handoff packet written: /tmp/handoff-engine-proof-demo/u27/HANDOFF_PACKET.md
+
+## stderr

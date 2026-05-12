@@ -1,0 +1,18 @@
+[
+  {
+    "claim": "The handoff objective is satisfied: Add a concise usage section to the README.",
+    "expected": "Evidence exists for `readme-usage-present` before the work is represented as complete.",
+    "id": "readme-usage-present",
+    "limits": [
+      "This claim covers the recorded handoff objective only."
+    ]
+  },
+  {
+    "claim": "The handoff objective is satisfied: Add a concise usage section to the README.",
+    "expected": "Evidence exists for `tests-pass` before the work is represented as complete.",
+    "id": "tests-pass",
+    "limits": [
+      "This claim covers the recorded handoff objective only."
+    ]
+  }
+]

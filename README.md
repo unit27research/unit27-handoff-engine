@@ -74,10 +74,10 @@ It is designed to feel like a deterministic agent handoff generator, not a proje
 ## System Position
 
 ```text
-Stack Engine -> Context Engine -> Handoff Engine -> Proof Ledger -> Boundary Engine -> u27-check
+Stack Engine -> Context Engine -> Handoff Engine -> Eval Bench -> Proof Ledger -> Boundary Engine -> u27-check
 ```
 
-Handoff Engine sits after context preparation and before proof recording. It does not decide whether the project should exist, scan the repository, run the work, or certify the result.
+Handoff Engine sits after context preparation and before eval execution. It does not decide whether the project should exist, scan the repository, run the work, record proof, or certify the result.
 
 ## Dogfood Artifacts
 
@@ -146,7 +146,7 @@ Handoff Engine does not:
 4. Record proof
 5. Rewrite public claims
 6. Perform launch QA
-7. Replace Proof Ledger, Boundary Engine, or `u27-check`
+7. Replace Eval Bench, Proof Ledger, Boundary Engine, or `u27-check`
 
 ## Verify
 

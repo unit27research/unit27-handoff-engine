@@ -39,9 +39,11 @@ Result: Handoff Engine writes a handoff packet with objective, constraints, acce
 
 ## 60-Second Start
 
-From this repo:
+The current public release is GitHub-first. Run it from a local checkout:
 
 ```bash
+git clone https://github.com/unit27research/unit27-handoff-engine
+cd unit27-handoff-engine
 pip install -e .
 handoff-engine demo
 cat handoff-engine-demo/u27/HANDOFF_PACKET.md

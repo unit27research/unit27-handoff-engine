@@ -8,7 +8,7 @@
     {
       "case_id": "context-engine-scan",
       "claim": "Context Engine produced a context report and manifest for the handoff target.",
-      "command": "/Users/joshuabloodworth/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m context_engine.cli scan . --output u27/context_manifest.md --report u27/context_report.json --max-tokens 50000 --exact-tokens --exclude 'u27/*' --exclude 'examples/sample-project/u27/*' --exclude 'build/*' --exclude '*.egg-info/*'",
+      "command": "python3 -m context_engine.cli scan . --output u27/context_manifest.md --report u27/context_report.json --max-tokens 50000 --exact-tokens --exclude 'u27/*' --exclude 'examples/sample-project/u27/*' --exclude 'build/*' --exclude '*.egg-info/*'",
       "evidence": [
         "u27/evidence/run-0001.txt"
       ],
@@ -56,7 +56,7 @@
     {
       "case_id": "package-builds",
       "claim": "The project can produce its expected build or package artifact.",
-      "command": "/Users/joshuabloodworth/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m pip wheel . --no-deps --no-build-isolation -w /tmp/handoff-engine-dogfood-wheel",
+      "command": "python3 -m pip wheel . --no-deps --no-build-isolation -w /tmp/handoff-engine-dogfood-wheel",
       "evidence": [
         "u27/evidence/run-0005.txt"
       ],

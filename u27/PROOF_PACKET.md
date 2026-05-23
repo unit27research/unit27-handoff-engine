@@ -7,7 +7,7 @@ Generated: 2026-05-12T16:55:06+00:00
 
 - Context Engine produced a context report and manifest for the handoff target.
   - Case: `context-engine-scan`
-  - Command: `/Users/joshuabloodworth/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m context_engine.cli scan . --output u27/context_manifest.md --report u27/context_report.json --max-tokens 50000 --exact-tokens --exclude 'u27/*' --exclude 'examples/sample-project/u27/*' --exclude 'build/*' --exclude '*.egg-info/*'`
+  - Command: `python3 -m context_engine.cli scan . --output u27/context_manifest.md --report u27/context_report.json --max-tokens 50000 --exact-tokens --exclude 'u27/*' --exclude 'examples/sample-project/u27/*' --exclude 'build/*' --exclude '*.egg-info/*'`
   - Evidence: `u27/evidence/run-0001.txt`
 
 - Handoff Engine produced a handoff packet from the recorded objective and context.
@@ -27,7 +27,7 @@ Generated: 2026-05-12T16:55:06+00:00
 
 - The project can produce its expected build or package artifact.
   - Case: `package-builds`
-  - Command: `/Users/joshuabloodworth/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m pip wheel . --no-deps --no-build-isolation -w /tmp/handoff-engine-dogfood-wheel`
+  - Command: `python3 -m pip wheel . --no-deps --no-build-isolation -w /tmp/handoff-engine-dogfood-wheel`
   - Evidence: `u27/evidence/run-0005.txt`
 
 - Boundary Engine reports no unsupported public claims for the README.

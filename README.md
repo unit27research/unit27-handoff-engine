@@ -9,7 +9,7 @@ U27-S04
 HANDOFF ENGINE
 
 CLASS: SYSTEM
-OPERATING_POSITION: 03/07
+OPERATING_POSITION: 04/08
 FUNCTION: Agent Handoff + Work Packet Generation
 REF_ID: U27-S04-HANDOFF-ENGINE
 ```
@@ -77,10 +77,10 @@ It is designed to feel like a deterministic agent handoff generator, not a proje
 ## System Position
 
 ```text
-Stack Engine -> Context Engine -> Handoff Engine -> Eval Bench -> Proof Ledger -> Boundary Engine -> u27-check
+Stack Engine -> Context Engine -> Knowledge Readiness -> Handoff Engine -> Eval Bench -> Proof Ledger -> Boundary Engine -> u27-check
 ```
 
-Handoff Engine sits after context preparation and before eval execution. It does not decide whether the project should exist, scan the repository, run the work, record proof, or certify the result.
+Handoff Engine sits after Knowledge Readiness classification and before eval execution. It turns approved context into bounded work packets; it does not decide whether the project should exist, scan the repository, run the work, record proof, or certify the result.
 
 ## Dogfood Artifacts
 

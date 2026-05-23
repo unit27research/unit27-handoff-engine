@@ -45,10 +45,10 @@ Handoff Engine exists to convert prepared context and a known objective into a b
 ## System Role
 
 ```text
-Stack Engine -> Context Engine -> Handoff Engine -> Proof Ledger -> Boundary Engine -> u27-check
+Stack Engine -> Context Engine -> Knowledge Readiness -> Handoff Engine -> Eval Bench -> Proof Ledger -> Boundary Engine -> u27-check
 ```
 
-Stack Engine shapes the work. Context Engine prepares the material. Handoff Engine states exactly what the agent should do with that material. Proof Ledger records what happened after the work. Boundary Engine checks whether public language stays inside proof. `u27-check` gates the first user path.
+Stack Engine shapes the work. Context Engine prepares the material. Knowledge Readiness classifies what the prepared context is allowed to become. Handoff Engine states exactly what the agent should do with approved context. Eval Bench runs declared checks. Proof Ledger records what happened after the work. Boundary Engine checks whether public language stays inside proof. `u27-check` gates the first user path.
 
 ## Boundary
 
@@ -174,10 +174,10 @@ It is designed to feel like a deterministic agent handoff generator, not a proje
 ## System Position
 
 ```text
-Stack Engine -> Context Engine -> Handoff Engine -> Proof Ledger -> Boundary Engine -> u27-check
+Stack Engine -> Context Engine -> Knowledge Readiness -> Handoff Engine -> Eval Bench -> Proof Ledger -> Boundary Engine -> u27-check
 ```
 
-Handoff Engine sits after context preparation and before proof recording. It does not decide whether the project should exist, scan the repository, run the work, or certify the result.
+Handoff Engine sits after Knowledge Readiness classification and before eval execution. It turns approved context into bounded work packets; it does not decide whether the project should exist, scan the repository, run the work, record proof, or certify the result.
 
 ## Dogfood Artifacts
 

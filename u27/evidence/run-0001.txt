@@ -1,4 +1,4 @@
-$ /Users/joshuabloodworth/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m context_engine.cli scan . --output u27/context_manifest.md --report u27/context_report.json --max-tokens 50000 --exact-tokens --exclude 'u27/*' --exclude 'examples/sample-project/u27/*' --exclude 'build/*' --exclude '*.egg-info/*'
+$ python3 -m context_engine.cli scan . --output u27/context_manifest.md --report u27/context_report.json --max-tokens 50000 --exact-tokens --exclude 'u27/*' --exclude 'examples/sample-project/u27/*' --exclude 'build/*' --exclude '*.egg-info/*'
 exit_code: 0
 
 ## stdout

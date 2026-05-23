@@ -7,10 +7,10 @@ Handoff Engine exists to convert prepared context and a known objective into a b
 ## System Role
 
 ```text
-Stack Engine -> Context Engine -> Handoff Engine -> Eval Bench -> Proof Ledger -> Boundary Engine -> u27-check
+Stack Engine -> Context Engine -> Knowledge Readiness -> Handoff Engine -> Eval Bench -> Proof Ledger -> Boundary Engine -> u27-check
 ```
 
-Stack Engine shapes the work. Context Engine prepares the material. Handoff Engine states exactly what the agent should do with that material. Eval Bench runs declared checks. Proof Ledger records what happened after the work. Boundary Engine checks whether public language stays inside proof. `u27-check` gates the first user path.
+Stack Engine shapes the work. Context Engine prepares the material. Knowledge Readiness classifies what the prepared context is allowed to become. Handoff Engine states exactly what the agent should do with approved context. Eval Bench runs declared checks. Proof Ledger records what happened after the work. Boundary Engine checks whether public language stays inside proof. `u27-check` gates the first user path.
 
 ## Boundary
 
